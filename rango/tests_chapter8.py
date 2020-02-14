@@ -86,6 +86,9 @@ class Chapter8TemplateTests(TestCase):
                      'rango/index.html',]
         
         for url, template in zip(urls, templates):
+            print(url,templates)
+            print("\n\n")
+            print(self.client.get(url))
             response = self.client.get(url)
             self.assertTemplateUsed(response, template)
 
